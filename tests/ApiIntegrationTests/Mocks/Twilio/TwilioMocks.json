@@ -1,0 +1,121 @@
+{
+  "uuid": "43fbb4cd-9b6a-433e-9779-b0d1b4d55b11",
+  "lastMigration": 33,
+  "name": "TwilioMocks",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3000,
+  "hostname": "",
+  "folders": [],
+  "routes": [
+    {
+      "uuid": "0e317fc5-3920-4925-aa27-9791155cb7cb",
+      "type": "http",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "2010-04-01/Accounts/:ACCOUNT_SID/Messages.json",
+      "responses": [
+        {
+          "uuid": "6d5d640e-3c6f-4770-b190-dda84b6ed140",
+          "body": "{\n    \"code\": 21211,\n    \"message\": \"Invalid 'To' Phone Number: XXXXXXX\",\n    \"more_info\": \"https://www.twilio.com/docs/errors/21211\",\n    \"status\": 400\n}",
+          "latency": 0,
+          "statusCode": 400,
+          "label": "When a parameter is invalid (Validates To number)",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "body",
+              "modifier": "To",
+              "value": "+1838383838",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "048fdcc0-b908-4096-b1fb-34733b17cc98",
+          "body": "{\n    \"account_sid\": \"TheTestAccountSID\",\n    \"api_version\": \"2010-04-01\",\n    \"body\": \"The mock just worked\",\n    \"date_created\": \"Thu, 28 Aug 2025 19:13:44 +0000\",\n    \"date_sent\": null,\n    \"date_updated\": \"Thu, 28 Aug 2025 19:13:44 +0000\",\n    \"direction\": \"outbound-api\",\n    \"error_code\": null,\n    \"error_message\": null,\n    \"from\": \"+19514004113\",\n    \"messaging_service_sid\": null,\n    \"num_media\": \"0\",\n    \"num_segments\": \"1\",\n    \"price\": null,\n    \"price_unit\": \"USD\",\n    \"sid\": \"YourSID\",\n    \"status\": \"queued\",\n    \"subresource_uris\": {\n        \"media\": \"/2010-04-01/Accounts/ACc8208623d5394d2621f2e7120c0cbb3c/Messages/SMf994d5fa823355d91123aa6809cffa94/Media.json\"\n    },\n    \"to\": \"+50575377624\",\n    \"uri\": \"/2010-04-01/Accounts/ACc8208623d5394d2621f2e7120c0cbb3c/Messages/SMf994d5fa823355d91123aa6809cffa94.json\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Succesfull response",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    }
+  ],
+  "rootChildren": [
+    {
+      "type": "route",
+      "uuid": "0e317fc5-3920-4925-aa27-9791155cb7cb"
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    },
+    {
+      "key": "Access-Control-Allow-Origin",
+      "value": "*"
+    },
+    {
+      "key": "Access-Control-Allow-Methods",
+      "value": "GET,POST,PUT,PATCH,DELETE,HEAD,OPTIONS"
+    },
+    {
+      "key": "Access-Control-Allow-Headers",
+      "value": "Content-Type, Origin, Accept, Authorization, Content-Length, X-Requested-With"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "data": [],
+  "callbacks": []
+}
